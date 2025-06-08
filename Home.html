@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>City Hospital</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #c8e6c9); /* New gender-neutral gradient */
+    }
+
+    header {
+      background: rgba(10, 20, 31, 0.9);
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #dceeff;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(10, 20, 31, 0.6), rgba(10,20,31,0.6)), 
+                  url('https://hospitalarchitects.in/sites/default/files/best_architect_for_multi_specialty_hospital_design.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background: #22a88b;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .hero button:hover {
+      background: #19919a;
+    }
+
+    .services {
+      max-width: 900px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.85);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #00695c; /* Deep green for emphasis */
+    }
+
+    .contact {
+      background: rgba(10, 20, 31, 0.8);
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.95em;
+      color: white;
+    }
+
+    .contact strong {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      .hero h2 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>City Hospital</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Your Health, Our Priority</h2>
+    <p>Get expert care from trusted professionals 24/7.</p>
+    <button onclick="location.href='register.html'">Register Now</button>
+  </section>
+
+  <section class="services">
+    <div class="card">
+      <h3>24/7 Emergency</h3>
+      <p>Always available emergency response team with modern facilities.</p>
+    </div>
+    <div class="card">
+      <h3>Specialist Doctors</h3>
+      <p>Cardiology, Neurology, Orthopedics, and more under one roof.</p>
+    </div>
+    <div class="card">
+      <h3>Modern Labs</h3>
+      <p>Fully equipped diagnostic centers with advanced tools.</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <strong>📞 Contact Us</strong>
+    City Hospital, Main Road, Pune<br>
+    Phone: +91-4444499999<br>
+    Email: info@cityhospital.in
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Unique Patient Registration</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #c8e6c9);
+    color: #171a2c8e;
+  }
+
+  .container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .left-panel {
+    flex: 1;
+    background: linear-gradient(135deg, #00796b, #1a1b2e85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+    text-align: center;
+  }
+
+  .left-panel h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .left-panel p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 300px;
+  }
+
+  .right-panel {
+    flex: 1;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    flex-direction: column;
+  }
+
+  form {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .form-group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #777;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease all;
+    background: white;
+    padding: 0 5px;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 14px 12px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  input:focus, select:focus {
+    border-color: #00796b;
+  }
+
+  input:focus + label,
+  input:not(:placeholder-shown) + label,
+  select:focus + label,
+  select:not([value=""]) + label {
+    top: -10px;
+    font-size: 0.85rem;
+    color: #00796b;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("data:image/svg+xml;charset=US-ASCII,%3csvg%20width%3d%2214%22%20height%3d%2210%22%20viewBox%3d%220%200%2014%2010%22%20xmlns%3d%22http%3a//www.w3.org/2000/svg%22%3e%3cpath%20d%3d%22M7%2010L0%200h14L7%2010z%22%20fill%3d%22%2300796b%22/%3e%3c/svg%3e") no-repeat right 10px center;
+    background-size: 14px 10px;
+    cursor: pointer;
+  }
+
+  button {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    background: #00796b;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 121, 107, 0.6);
+    transition: background 0.3s ease;
+  }
+
+  button:hover {
+    background: #004d40;
+  }
+
+  .back-home-btn {
+    margin-top: 20px;
+    background: #c8e6c9;
+    color: #00796b;
+    box-shadow: 0 4px 10px rgba(0, 121, 107, 0.4);
+  }
+
+  .back-home-btn:hover {
+    background: #a5d6a7;
+  }
+
+  @media (max-width: 900px) {
+    .container {
+      flex-direction: column;
+    }
+    .left-panel, .right-panel {
+      clip-path: none;
+      flex: none;
+      width: 100%;
+      padding: 40px 30px;
+      box-shadow: none;
+    }
+    .left-panel {
+      order: 2;
+      background: linear-gradient(135deg, #00796b, #004d40);
+    }
+    .right-panel {
+      order: 1;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="left-panel">
+    <h1>Welcome to City Hospital</h1>
+    <p>Your health is our top priority. Please register to get personalized care from our specialists.</p>
+  </div>
+  <div class="right-panel">
+    <form onsubmit="event.preventDefault(); window.location.href='doctor.html';">
+      <div class="form-group">
+        <input type="text" id="fullname" placeholder=" " required />
+        <label for="fullname">Full Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder=" " required />
+        <label for="email">Email</label>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phone" placeholder=" " required />
+        <label for="phone">Phone Number</label>
+      </div>
+      <div class="form-group">
+        <select id="gender" required value="">
+          <option value="" disabled selected hidden></option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+        <label for="gender">Gender</label>
+      </div>
+      <button type="submit">Submit Registration</button>
+    </form>
+    <button class="back-home-btn" type="button" onclick="location.href='Home.html'">Back to Home</button>
+  </div>
+</div>
+
+</body>
+</html>

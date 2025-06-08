@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Doctors</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #407379, #14424f);
+      padding: 50px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      background: #f9faf9;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(26, 27, 46, 0.33);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #00796b;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #d0ede0;
+      border-radius: 24px;
+      text-align: center;
+      padding: 25px 20px;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                  box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  background-color 0.3s;
+      box-shadow: 0 6px 20px rgba(26, 27, 46, 0.1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 20px 50px rgba(0, 121, 107, 0.4);
+      background-color: #b2dfdb;
+    }
+
+    .card img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 18px;
+      border: 4px solid #004d40;
+      transition: border-color 0.3s;
+    }
+
+    .card:hover img {
+      border-color: #1de9b6;
+    }
+
+    .name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #004d40;
+      margin-bottom: 6px;
+    }
+
+    .speciality {
+      margin: 6px 0 12px;
+      font-size: 1rem;
+      color: #00796b;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 30px;
+      background: #a5d6a7;
+      color: #1b5e20;
+      box-shadow: 0 2px 6px rgba(26, 27, 46, 0.15);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .availability.not-available {
+      background: #ef9a9a;
+      color: #b71c1c;
+      box-shadow: 0 2px 6px rgba(183, 28, 28, 0.25);
+    }
+
+    .availability::before {
+      content: "✔️";
+      margin-right: 8px;
+      font-size: 1.1rem;
+      color: inherit;
+    }
+
+    .availability.not-available::before {
+      content: "❌";
+    }
+
+    .card button {
+      background: linear-gradient(135deg, #0a1b19, #173732);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1.05rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0, 121, 107, 0.4);
+      transition: background 0.4s ease, transform 0.2s ease;
+      user-select: none;
+    }
+
+    .card button:hover:not(:disabled) {
+      background: linear-gradient(135deg, #1de9b6, #004d40);
+      transform: scale(1.08);
+    }
+
+    .card button:disabled {
+      background: #9e9e9e;
+      cursor: not-allowed;
+      box-shadow: none;
+      color: #e0e0e0;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 40px auto 0;
+      background: #a5d6a7;
+      color: #004d40;
+      padding: 14px 36px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(26, 27, 46, 0.25);
+      transition: background 0.3s, transform 0.25s ease;
+      user-select: none;
+    }
+
+    .back-btn:hover {
+      background: #81c784;
+      transform: scale(1.05);
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Meet Our Specialists</h1>
+    <div class="grid">
+      <div class="card">
+        <img src="https://static.vecteezy.com/system/resources/previews/041/408/858/non_2x/ai-generated-a-smiling-doctor-with-glasses-and-a-white-lab-coat-isolated-on-transparent-background-free-png.png" alt="Dr. Rajesh Kumar" />
+        <div class="name">Dr. Rajesh Kumar</div>
+        <div class="speciality">Cardiologist</div>
+        <div class="availability">Available</div>
+        <button onclick="location.href='appointment.html?doctor=Dr.%20Rajesh%20Kumar'">Book</button>
+      </div>
+      <div class="card">
+        <img src="https://img.freepik.com/premium-photo/generative-ai-happy-young-woman-doctor-wears-white-medical-coat-stethoscope-looking-camera_934909-9209.jpg" alt="Dr. Anita Sharma" />
+        <div class="name">Dr. Anita Sharma</div>
+        <div class="speciality">Pediatrician</div>
+        <div class="availability not-available">Not Available</div>
+        <button disabled>Book</button>
+      </div>
+      <div class="card">
+        <img src="https://img.freepik.com/premium-photo/handsome-hispanical-doctor-isolated_118124-101342.jpg" alt="Dr. Vivek Singh" />
+        <div class="name">Dr. Vivek Singh</div>
+        <div class="speciality">Orthopedic Surgeon</div>
+        <div class="availability">Available</div>
+        <button onclick="location.href='appointment.html?doctor=Dr.%20Vivek%20Singh'">Book</button>
+      </div>
+      <div class="card">
+        <img src="https://img.freepik.com/premium-photo/happy-smiling-doctor-nurse-with-stethoscope-cute-young_950002-191766.jpg" alt="Dr. Priya Mehta" />
+        <div class="name">Dr. Priya Mehta</div>
+        <div class="speciality">Dermatologist</div>
+        <div class="availability not-available">Not Available</div>
+        <button disabled>Book</button>
+      </div>
+      <div class="card">
+        <img src="https://static.vecteezy.com/system/resources/previews/035/997/616/non_2x/ai-generated-young-handsome-doctor-with-stethoscope-isolated-free-photo.jpg" alt="Dr. Arjun Patel" />
+        <div class="name">Dr. Arjun Patel</div>
+        <div class="speciality">Neurologist</div>
+        <div class="availability">Available</div>
+        <button onclick="location.href='appointment.html?doctor=Dr.%20Arjun%20Patel'">Book</button>
+      </div>
+      <div class="card">
+        <img src="https://leman-clinic.ch/wp-content/uploads/2018/11/02.jpg" alt="Dr. Neha Desai" />
+        <div class="name">Dr. Neha Desai</div>
+        <div class="speciality">Gynecologist</div>
+        <div class="availability">Available</div>
+        <button onclick="location.href='appointment.html?doctor=Dr.%20Neha%20Desai'">Book</button>
+      </div>
+    </div>
+    <button class="back-btn" onclick="location.href='Home.html'">Back to Registration</button>
+  </div>
+</body>
+</html>

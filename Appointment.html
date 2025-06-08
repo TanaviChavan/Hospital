@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Appointment Form - City Hospital</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body, html {
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background: #e0f7fa;
+  }
+
+  .container {
+    display: flex;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+  }
+
+  .left-panel {
+    background: #00796b;
+    color: white;
+    flex: 1;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .left-panel h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    line-height: 1.1;
+  }
+
+  .left-panel p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 320px;
+    opacity: 0.85;
+  }
+
+  .left-panel .contact {
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  .right-panel {
+    flex: 1;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-group {
+    position: relative;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 14px 15px;
+    border-radius: 12px;
+    border: 2px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus, select:focus {
+    border-color: #00796b;
+  }
+
+  label {
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    font-size: 1rem;
+    color: #777;
+    pointer-events: none;
+    transition: 0.3s ease all;
+    background: white;
+    padding: 0 5px;
+  }
+
+  input:focus + label,
+  input:not(:placeholder-shown) + label,
+  select:focus + label,
+  select:not([value=""]) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.75rem;
+    color: #00796b;
+  }
+
+  button.submit-btn {
+    margin-top: 10px;
+    padding: 15px;
+    background: #00796b;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,121,107,0.4);
+    transition: background-color 0.3s ease;
+  }
+
+  button.submit-btn:hover {
+    background: #004d40;
+  }
+
+  .back-btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+
+  .back-home-btn {
+    background: #c8e6c9;
+    color: #00796b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 121, 107, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .back-home-btn:hover {
+    background: #a5d6a7;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 850px) {
+    .container {
+      flex-direction: column;
+      max-width: 95%;
+    }
+    .left-panel, .right-panel {
+      padding: 30px 25px;
+    }
+    .left-panel h1 {
+      font-size: 2rem;
+    }
+    .back-btn-wrapper {
+      justify-content: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="left-panel">
+    <h1>Book Your Appointment<br>With City Hospital</h1>
+    <p>Fill in the details and choose your preferred date and time for a smooth appointment experience.</p>
+    <div class="contact">
+      Contact us: <strong>+91 12345 67890</strong><br />
+      Visit: <strong>www.cityhospital.com</strong>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <form onsubmit="event.preventDefault(); alert('Appointment Confirmed! Thank you.');">
+      <div class="form-group">
+        <input type="text" id="fullname" placeholder=" " required />
+        <label for="fullname">Full Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder=" " required />
+        <label for="email">Email Address</label>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phone" placeholder=" " pattern="[0-9+\-\s]{10,15}" required />
+        <label for="phone">Phone Number</label>
+      </div>
+      <div class="form-group">
+        <input type="date" id="date" placeholder=" " required />
+        <label for="date">Appointment Date</label>
+      </div>
+      <div class="form-group">
+        <select id="time" required>
+          <option value="" disabled selected hidden></option>
+          <option>09:00 AM - 11:00 AM</option>
+          <option>11:00 AM - 01:00 PM</option>
+          <option>02:00 PM - 04:00 PM</option>
+          <option>04:00 PM - 06:00 PM</option>
+        </select>
+        <label for="time">Preferred Time</label>
+      </div>
+      <button class="submit-btn" type="submit">Confirm Appointment</button>
+    </form>
+
+    <div class="back-btn-wrapper">
+      <button class="back-home-btn" type="button" onclick="location.href='doctor.html'">← Back</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Set min date to today for appointment date input
+  const dateInput = document.getElementById('date');
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.min = today;
+</script>
+
+</body>
+</html>
